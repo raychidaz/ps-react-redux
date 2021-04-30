@@ -8,7 +8,7 @@ export function createCourse(course) {
   return { type: types.CREATE_COURSE, course: course };
 }
 
-export function loadCourseSuccess(courses) {
+export function loadCoursesSuccess(courses) {
   return { type: types.LOAD_COURSES_SUCCESS, courses };
 }
 
@@ -18,7 +18,7 @@ export function loadCourses() {
     return courseApi
       .getCourses()
       .then((courses) => {
-        dispatch(loadCourseSuccess(courses));
+        dispatch(loadCoursesSuccess(courses));
       })
       .catch((error) => {
         throw error;
